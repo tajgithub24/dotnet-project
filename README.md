@@ -24,8 +24,10 @@ sudo apt install -y dotnet-sdk-8.0
 
 # Optional: Confirm .NET installation
 dotnet --version
+```
 
-
+## 🧰 STEPS
+```bash
 # Clone or Create the Project
 dotnet new webapp -n TaskManagerApp
 cd TaskManagerApp
