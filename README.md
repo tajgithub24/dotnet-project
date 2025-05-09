@@ -26,4 +26,28 @@ sudo apt install -y dotnet-sdk-8.0
 dotnet --version
 
 
+# Clone or Create the Project
+dotnet new webapp -n TaskManagerApp
+cd TaskManagerApp
+
+
+# Install EF Core & Create DB
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet tool install --global dotnet-ef
+
+# Add EF tool path (if not already):
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# Create DB:
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+
+# Run the App
+dotnet run
+
+# Access it:
+http://<Your-VM-Public-IP>:5298/Tasks
+
 
