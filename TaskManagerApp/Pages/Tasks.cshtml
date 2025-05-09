@@ -1,0 +1,16 @@
+@page
+@model TasksModel
+<h2>Task List</h2>
+
+<form method="post">
+    <input asp-for="NewTaskTitle" placeholder="New task..." />
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+@foreach (var task in Model.TaskList)
+{
+    <li>@task.Title - @(task.IsDone ? "Done" : "Pending")</li>
+}
+</ul>
+
